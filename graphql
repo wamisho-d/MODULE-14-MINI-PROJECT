@@ -1,0 +1,49 @@
+Testing the API
+Create a Genre:
+
+mutation {
+    createGenre(name: "Action") {
+        genre {
+          id
+          name
+        }
+    }
+}
+
+Update a Genre:
+mutation {
+    updateGenre(id: 1, name: "Adventure") {
+        genre {
+          id
+          name
+        }
+    }
+}
+
+Delete a Genre:
+mutation {
+    deleteGenre(id: 1) {
+        success
+    }
+}
+
+Fetch Movies by Genre:
+query {
+    moviesByGenre(genreId: 1) {
+      id 
+      title
+      description
+    }
+}
+
+Fetch Genre by Movie:
+query {
+    genreByMovie(movieId: 1) {
+      id
+      name
+    }
+}
+
+
+
+
